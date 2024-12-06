@@ -1,0 +1,112 @@
+body {
+  width: 450px;
+  margin: 0;
+  padding: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+#searchInput:focus {
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.bookmarks-list {
+  max-height: 450px;
+  overflow-y: auto;
+  border-radius: 8px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* 隐藏 Webkit 浏览器的滚动条 */
+.bookmarks-list::-webkit-scrollbar {
+  display: none;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.bookmark-item.selected {
+  background-color: #f0f7ff;
+}
+
+.bookmark-item:hover {
+  background-color: #f5f9ff;
+}
+
+.favicon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  object-fit: contain;
+  background-color: #f5f5f5;
+  padding: 2px;
+}
+
+.bookmark-info {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.bookmark-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.bookmark-url {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.8;
+}
+
+/* 添加空状态样式 */
+.bookmarks-list:empty {
+  display: none;
+}
+
+/* 添加选中项的动画效果 */
+.bookmark-item.selected {
+  background-color: #f0f7ff;
+  transform: translateX(2px);
+}
+
+/* 添加点击效果 */
+.bookmark-item:active {
+  transform: scale(0.995);
+} 
